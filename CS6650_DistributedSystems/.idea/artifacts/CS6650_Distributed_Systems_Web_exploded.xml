@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CS6650_Distributed Systems:Web exploded">
+    <output-path>$PROJECT_DIR$/Lab3</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="CS6650_Distributed Systems/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CS6650_Distributed Systems" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
