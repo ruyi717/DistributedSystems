@@ -1,16 +1,29 @@
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
+import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 public class ServerLoadTester {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException, IOException {
     if (args.length != 4) {
-      System.out.println("Usage: java ServerLoadTester <threadGroupSize> <numThreadGroups> <delay> <IPAddr>");
+      System.out.println(
+          "Usage: java ServerLoadTester <threadGroupSize> <numThreadGroups> <delay> <IPAddr>");
       System.exit(1);
     }
 
@@ -18,109 +31,103 @@ public class ServerLoadTester {
     int numThreadGroups = Integer.parseInt(args[1]);
     int delay = Integer.parseInt(args[2]);
     String serverURI = args[3];
+    String getURI = serverURI + "/1";
+
+    AtomicReference<Integer> totalRequests = new AtomicReference<>(0);
+    RequestCounterBarrier counter = new RequestCounterBarrier();
+    CountDownLatch completed = new CountDownLatch(10);
+    HttpClient client = new HttpClient();
+
+    for (int i = 0; i < 10; i++) {
+      Runnable thread = () -> {
+        counter.inc();
+        completed.countDown();
+      };
+      new Thread(thread).start();
+      HttpMethod postMethod = new PostMethod(serverURI);
+      HttpMethod getMethod = new GetMethod(getURI);
+      doMethods(client, postMethod);
+      doMethods(client, getMethod);
+    }
+    completed.await();
 
     long startTime = System.currentTimeMillis();
-    int totalRequests = 0;
-    int successfulRequests = 0;
 
-    // Create an ExecutorService for managing threads
-    ExecutorService executor = Executors.newFixedThreadPool(threadGroupSize);
-
-    // Loop through the thread groups
-    for (int i = 0; i < numThreadGroups; i++) {
-      System.out.println("Starting Thread Group " + (i + 1));
-
-      // Create and start threads in the current thread group
-      for (int j = 0; j < threadGroupSize; j++) {
-        executor.submit(new LoadTestRunnable(serverURI, successfulRequests));
+    for (int threadGroup = 0; threadGroup < numThreadGroups; threadGroup++) {
+      for (int i = 0; i < threadGroupSize; i++) {
+        for (int j = 0; j < 1000; j++) {
+          Runnable thread = () -> {
+            counter.inc();
+            completed.countDown();
+          };
+          new Thread(thread).start();
+          HttpMethod postMethod = new PostMethod(serverURI);
+          HttpMethod getMethod = new GetMethod(getURI);
+          doMethods(client, postMethod);
+          doMethods(client, getMethod);
+          totalRequests.updateAndGet(v -> v + 2);
+        }
       }
-
-      // Sleep for the specified delay before starting the next thread group
       try {
-        Thread.sleep(delay * 1000);
+        Thread.sleep(delay * 1000); // Sleep for 'delay' seconds between thread groups
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     }
 
-    // Shutdown the executor and wait for all threads to finish
-    executor.shutdown();
-    try {
-      executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
-    // Calculate the Wall Time
     long endTime = System.currentTimeMillis();
     long wallTime = (endTime - startTime) / 1000;
+    double throughput = (double) totalRequests.get() / wallTime;
 
-    // Calculate Throughput
-    double throughput = (double) successfulRequests / wallTime;
-
-    // Output results
     System.out.println("Wall Time: " + wallTime + " seconds");
     System.out.println("Throughput: " + throughput + " requests/second");
   }
 
-  static class LoadTestRunnable implements Runnable {
-    private final String serverURI;
-    private int successfulRequests;
+  private static void doMethods(HttpClient client, HttpMethod method) throws InterruptedException {
+    method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER,
+        new DefaultHttpMethodRetryHandler(3, false));
 
-    public LoadTestRunnable(String serverURI, int successfulRequests) {
-      this.serverURI = serverURI;
-      this.successfulRequests = successfulRequests;
+    int retryCount = 0;
+    int maxRetries = 5;
+    boolean requestSuccessful = false;
+    long startTime = System.currentTimeMillis();
+
+    while (retryCount < maxRetries) {
+      try {
+        // Execute the method.
+        int statusCode = client.executeMethod(method);
+        if (statusCode != HttpStatus.SC_OK) {
+          System.err.println("Method failed: " + method.getStatusLine());
+        } else {
+          requestSuccessful = true;
+          break; // Request was successful, exit the loop
+        }
+
+        // Read the response body.
+        byte[] responseBody = method.getResponseBody();
+
+        // Deal with the response.
+        // Use caution: ensure correct character encoding and is not binary data
+        System.out.println("GET API: " + new String(responseBody));
+
+      } catch (HttpException e) {
+        System.err.println("Fatal protocol violation: " + e.getMessage());
+        e.printStackTrace();
+      } catch (IOException e) {
+        System.err.println("Fatal transport error: " + e.getMessage());
+        e.printStackTrace();
+      } finally {
+        // Release the connection.
+        method.releaseConnection();
+      }
+      retryCount++;
+      if (retryCount < maxRetries) {
+        Thread.sleep(1000);
+      }
     }
 
-    @Override
-    public void run() {
-      for (int k = 0; k < 100; k++) {
-        // Retry up to 5 times for 4XX and 5XX response codes
-        for (int retryCount = 0; retryCount < 5; retryCount++) {
-          try {
-            // Create an HTTP client
-            HttpClient client = HttpClient.newHttpClient();
-
-            // Create a POST request
-            HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create(serverURI))
-                .POST(HttpRequest.BodyPublishers.noBody())
-                .build();
-
-            // Send the POST request
-            HttpResponse<String> postResponse = client.send(postRequest, HttpResponse.BodyHandlers.ofString());
-
-            if (postResponse.statusCode() == 200) {
-              successfulRequests++;
-              break; // Success, exit retry loop
-            } else if (postResponse.statusCode() >= 400 && postResponse.statusCode() < 600) {
-              // Retry for 4XX and 5XX response codes
-              continue; // Retry the request
-            }
-
-            // Create a GET request
-            HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(URI.create(serverURI))
-                .GET()
-                .build();
-
-            // Send the GET request
-            HttpResponse<String> getResponse = client.send(getRequest, HttpResponse.BodyHandlers.ofString());
-
-            if (getResponse.statusCode() == 200) {
-              successfulRequests++;
-              break; // Success, exit retry loop
-            } else if (getResponse.statusCode() >= 400 && getResponse.statusCode() < 600) {
-              // Retry for 4XX and 5XX response codes
-              continue; // Retry the request
-            }
-
-          } catch (Exception e) {
-            // Handle exceptions here
-            e.printStackTrace();
-          }
-        }
-      }
+    if (!requestSuccessful) {
+      System.err.println("Request failed after " + maxRetries + " retries: " + method.getPath());
     }
   }
 }
