@@ -19,28 +19,28 @@ public class AlbumServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     try {
 //       Handle file upload
-//      Part filePart = request.getPart("image");
-//      String fileName = UUID.randomUUID().toString() + ".jpg"; // Generate a unique file name
-//      InputStream inputStream = filePart.getInputStream();
-//      // Specify the directory where you want to save the uploaded files
-//      OutputStream outputStream = new FileOutputStream("/Users/jouy/Desktop/DistributedSystems/CS6650_DistributedSystems/Assignment1/" + fileName);
-//
-//      byte[] buffer = new byte[1024];
-//      int bytesRead;
-//      long imageSizeInBytes = 0; // Initialize the size counter
-//
-//      while ((bytesRead = inputStream.read(buffer)) != -1) {
-//        outputStream.write(buffer, 0, bytesRead);
-//        imageSizeInBytes += bytesRead; // Update the image size
-//      }
-//      outputStream.close();
-//      inputStream.close();
+      Part filePart = request.getPart("image");
+      String fileName = UUID.randomUUID().toString() + ".jpg"; // Generate a unique file name
+      InputStream inputStream = filePart.getInputStream();
+      // Specify the directory where you want to save the uploaded files
+      OutputStream outputStream = new FileOutputStream("/Users/jouy/Desktop/DistributedSystems/CS6650_DistributedSystems/Assignment1/" + fileName);
+
+      byte[] buffer = new byte[1024];
+      int bytesRead;
+      long imageSizeInBytes = 0; // Initialize the size counter
+
+      while ((bytesRead = inputStream.read(buffer)) != -1) {
+        outputStream.write(buffer, 0, bytesRead);
+        imageSizeInBytes += bytesRead; // Update the image size
+      }
+      outputStream.close();
+      inputStream.close();
 
 //       Generate a new album key (albumID)
       String albumID = "1";
 
       // Create the JSON response
-      String imageSize = "3475";
+      String imageSize = String.valueOf(imageSizeInBytes);
 
       String jsonResponse = String.format("{\"albumID\": \"%s\", \"imageSize\": \"%s\"}", albumID, imageSize);
 
