@@ -52,22 +52,36 @@ func getAlbums(c *gin.Context) {
 
 // createAlbum handles the POST request to create a new album.
 func createAlbum(c *gin.Context) {
-	//// Parse the form data, including the file upload
-	//err := c.Request.ParseMultipartForm(10 << 20) // 10 MB max file size
-	//if err != nil {
-	//	c.JSON(http.StatusBadRequest, gin.H{"msg": "Failed to parse form data"})
-	//	return
-	//}
-	//
-	//// Retrieve the file from the form data
-	//file, header, err := c.Request.FormFile("image")
-	//if err != nil {
-	//	c.JSON(http.StatusBadRequest, gin.H{"msg": "Image not found in the request"})
-	//	return
-	//}
-	//defer file.Close()
+	// Parse the form data, including the file upload
+	err := c.Request.ParseMultipartForm(10 << 20) // 10 MB max file size
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"msg": "Failed to parse form data"})
+		return
+	}
 
-	fileSize := 10 * 1024 * 1024
+	// Retrieve the file from the form data
+	file, err := c.FormFile("image")
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"msg": "Image not found in the request"})
+		return
+	}
+
+	fileSize := 0
+	buffer := make([]byte, 1024)
+	uploadedFile, err := file.Open()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"msg": "Error opening uploaded file"})
+		return
+	}
+	defer uploadedFile.Close()
+
+	for {
+		n, err := uploadedFile.Read(buffer)
+		if err != nil {
+			break
+		}
+		fileSize += n
+	}
 
 	response := gin.H{
 		"albumID":   "1",
