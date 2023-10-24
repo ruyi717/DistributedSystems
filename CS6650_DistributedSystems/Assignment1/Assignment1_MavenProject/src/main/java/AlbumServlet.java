@@ -49,10 +49,6 @@ public class AlbumServlet extends HttpServlet {
       response.getWriter().write(jsonResponse);
       response.setStatus(HttpServletResponse.SC_OK);
     } catch (Exception e) {
-      // Handle any exceptions that may occur during file upload or processing
-//      response.setContentType("application/json");
-//      String errorMessage = "{\"msg\": \"Error uploading file\"}";
-//      response.getWriter().write(errorMessage);
       response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
     }
 
