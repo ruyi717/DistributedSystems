@@ -4,10 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!-- Configure session timeout -->
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+
   <servlet>
     <servlet-name>AlbumServlet</servlet-name>
     <servlet-class>AlbumServlet</servlet-class>
   </servlet>
+
   <servlet>
     <servlet-name>AlbumInfoServlet</servlet-name>
     <servlet-class>AlbumInfoServlet</servlet-class>
@@ -17,8 +23,10 @@
     <servlet-name>AlbumServlet</servlet-name>
     <url-pattern>/albums</url-pattern>
   </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>AlbumInfoServlet</servlet-name>
     <url-pattern>/albums/*</url-pattern>
   </servlet-mapping>
+
 </web-app>

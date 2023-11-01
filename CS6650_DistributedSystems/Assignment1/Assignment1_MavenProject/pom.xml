@@ -25,8 +25,30 @@
       <artifactId>gson</artifactId>
       <version>2.10.1</version>
     </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.12.5</version> <!-- Use the appropriate version -->
+    </dependency>
+
+      <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongodb-driver-sync</artifactId>
+        <version>4.4.2</version> <!-- Use the latest version -->
+      </dependency>
+
   </dependencies>
   <build>
     <finalName>Assignment1_MavenProject</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>9</source>
+          <target>9</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

@@ -1,15 +1,15 @@
-public class Album {
+public class AlbumInfo {
   private String artist;
   private String title;
-  private Integer year;
+  private String year;
 
-  public Album(String artist, String title, Integer year) {
+  public AlbumInfo(String artist, String title, String year) {
     this.artist = artist;
     this.title = title;
     this.year = year;
   }
 
-  public Album() {
+  public AlbumInfo() {
   }
 
   public String getArtist() {
@@ -28,11 +28,11 @@ public class Album {
     this.title = title;
   }
 
-  public Integer getYear() {
+  public String getYear() {
     return year;
   }
 
-  public void setYear(Integer year) {
+  public void setYear(String year) {
     this.year = year;
   }
 }
