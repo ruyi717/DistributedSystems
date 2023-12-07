@@ -1,0 +1,14 @@
+albumstore/ReviewServlet.class
+albumstore/service/ReviewService.class
+albumstore/exception/BadRequestException.class
+albumstore/MainServlet.class
+albumstore/entity/ReviewProfile.class
+albumstore/ConnectionPool.class
+albumstore/entity/ImageMetaData.class
+albumstore/entity/ErrorMsg.class
+albumstore/entity/AlbumBody.class
+albumstore/service/AlbumBodyService.class
+albumstore/exception/NotFoundException.class
+albumstore/entity/AlbumProfile.class
+albumstore/service/ObjectDocumentConverter.class
+albumstore/entity/ReviewBody.class

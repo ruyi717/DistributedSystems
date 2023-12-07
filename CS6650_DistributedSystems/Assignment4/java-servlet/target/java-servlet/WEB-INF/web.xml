@@ -1,0 +1,23 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>albums</servlet-name>
+    <servlet-class>albumstore.MainServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>reviews</servlet-name>
+    <servlet-class>albumstore.ReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>albums</servlet-name>
+    <url-pattern>/albums/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>reviews</servlet-name>
+    <url-pattern>/review/*</url-pattern>
+  </servlet-mapping>
+</web-app>
