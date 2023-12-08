@@ -9,10 +9,9 @@ public class ConnectionPool extends BasePooledObjectFactory<Channel> {
 
     @Override
     public Channel create() throws Exception {
-        factory.setHost("172.31.16.177");
-        factory.setUsername("katexuuu");
+        factory.setHost("35.86.166.211");
+        factory.setUsername("ruyi");
         factory.setPassword("password");
-
         Connection connection = factory.newConnection();
         return connection.createChannel();
     }

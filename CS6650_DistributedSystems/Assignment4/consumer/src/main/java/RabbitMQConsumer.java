@@ -16,15 +16,19 @@ import java.util.logging.Logger;
 
 public class RabbitMQConsumer {
     private static final String QUEUE_NAME = "album_review_queue";
-    private static final String RABBITMQ_HOST = "172.31.16.177"; // RabbitMQ server host
-    private static final String DB_ADDRESS = "172.31.27.253";
+    // Todo: change to RabbitMQ server ip address
+    private static final String RABBITMQ_HOST = "35.86.166.211"; // RabbitMQ server host
+    // TODO: change to MongoDB server ip address
+    private static final String DB_ADDRESS = "35.90.245.196";
     private static final int DB_PORT = 27017;
     private static final int NUM_THREADS = 32;
 
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(RABBITMQ_HOST);
-        factory.setUsername("katexuuu");
+        // TODO: change to RabbitMQ username and password
+        factory.setPort(5672);
+        factory.setUsername("ruyi");
         factory.setPassword("password");
 
         Connection connection = factory.newConnection();
@@ -38,7 +42,7 @@ public class RabbitMQConsumer {
 
                 DeliverCallback deliverCallback = (consumerTag, delivery) -> {
                     String message = new String(delivery.getBody(), "UTF-8");
-//                    System.out.println(message);
+                    System.out.println(message);
                     writeToDB(mongoClient, message);
 //                    channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
                 };
@@ -55,11 +59,6 @@ public class RabbitMQConsumer {
             thread.start();
             System.out.println("start  " + i);
         }
-//        ExecutorService epool = Executors.newFixedThreadPool(NUM_THREADS);
-//        for (int i = 0; i < NUM_THREADS; i++) {
-//            epool.execute(runnable);
-//        }
-//        epool.awaitTermination(Long.MAX_VALUE, TimeUnit.MINUTES);
     }
 
     public static void writeToDB(MongoClient mongoClient, String message) {
@@ -71,7 +70,7 @@ public class RabbitMQConsumer {
         ReviewItem reviewItem = gson.fromJson(message, ReviewItem.class);
         ObjectId documentId = new ObjectId(reviewItem.getId()); // Replace with the actual ObjectId
         Document filter = new Document("_id", documentId);
-        String fieldName = reviewItem.isIfLike() ? "like" : "dislike";
+        String fieldName = reviewItem.isIfLike() ? "likes" : "dislikes";
         Document update = new Document("$inc", new Document(fieldName, 1));
         UpdateResult updateResult = collection.updateOne(filter, update);
         if (updateResult.wasAcknowledged() && updateResult.getModifiedCount() > 0) {

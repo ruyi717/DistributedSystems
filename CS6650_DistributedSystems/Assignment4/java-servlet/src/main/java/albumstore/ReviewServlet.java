@@ -1,34 +1,23 @@
 package albumstore;
 
 import albumstore.entity.ErrorMsg;
-import albumstore.entity.ImageMetaData;
-import albumstore.exception.BadRequestException;
 import albumstore.exception.NotFoundException;
-import albumstore.service.AlbumBodyService;
 import albumstore.service.ReviewService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.mongodb.ConnectionString;
-
-
-import com.mongodb.MongoClientSettings;
-import com.mongodb.ServerAddress;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.stream.Collectors;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Collections;
+
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.ServerAddress;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import com.rabbitmq.client.Channel;
 import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPool;
@@ -37,11 +26,10 @@ import org.apache.commons.pool2.impl.GenericObjectPool;
 public class ReviewServlet extends HttpServlet {
     private MongoClient mongoClient;
     private ReviewService reviewService;
-    private static final String DB_ADDRESS = "35.160.170.87";
+    private static final String DB_ADDRESS = "35.90.245.196";
     private static final int DB_PORT = 27017;
-//    private Gson gson = new Gson();
-//    private final static String QUEUE_NAME = "album_review_queue";
-//    private ObjectPool<Channel> pool;
+    private final static String QUEUE_NAME = "album_review_queue";
+    private ObjectPool<Channel> pool;
 
     public ReviewServlet() {
         this.getConnection();
@@ -49,9 +37,9 @@ public class ReviewServlet extends HttpServlet {
     }
 
 
-//    public void init() {
-//        this.pool = new GenericObjectPool<Channel>(new ConnectionPool());
-//    }
+    public void init() {
+        this.pool = new GenericObjectPool<Channel>(new ConnectionPool());
+    }
 
     private void getConnection() {
         ConnectionString connString = new ConnectionString("mongodb://yourNewUser:yourNewPassword@"+ DB_ADDRESS + ":" + DB_PORT);
@@ -60,9 +48,9 @@ public class ReviewServlet extends HttpServlet {
                 builder.hosts(
                     Collections.singletonList(new ServerAddress(connString.getHosts().get(0))))
             )
-            .credential(connString.getCredential())
+//            .credential(connString.getCredential())
             .build();
-        mongoClient = MongoClients.create(settings);
+        this.mongoClient = MongoClients.create(settings);
     }
 
     @Override
@@ -116,45 +104,42 @@ public class ReviewServlet extends HttpServlet {
                     boolean like = urlParts[1].equals("like");
                     String id = urlParts[2];
 
-                    if(like) {
-                        try {
-                            jsonResponse = this.reviewService.addLike(id);
-                        } catch (Exception e) {
-                            rc = HttpServletResponse.SC_NOT_FOUND;
-                            jsonResponse = gson.toJson(new ErrorMsg(e.getMessage()));
-                        }
-                    } else {
-                        try {
-                            jsonResponse = this.reviewService.addDislike(id);
-                        } catch (Exception e) {
-                            rc = HttpServletResponse.SC_NOT_FOUND;
-                            jsonResponse = gson.toJson(new ErrorMsg(e.getMessage()));
-                        }
-                    }
+//                    if(like) {
+//                        try {
+//                            jsonResponse = this.reviewService.addLike(id);
+//                        } catch (Exception e) {
+//                            rc = HttpServletResponse.SC_NOT_FOUND;
+//                            jsonResponse = gson.toJson(new ErrorMsg(e.getMessage()));
+//                        }
+//                    } else {
+//                        try {
+//                            jsonResponse = this.reviewService.addDislike(id);
+//                        } catch (Exception e) {
+//                            rc = HttpServletResponse.SC_NOT_FOUND;
+//                            jsonResponse = gson.toJson(new ErrorMsg(e.getMessage()));
+//                        }
+//                    }
 
                     JsonObject reviewItem = new JsonObject();
                     reviewItem.addProperty("albumID", id);
                     reviewItem.addProperty("ifLike", like);
-
-//                    Channel channel = null;
-
-
-//                    try {
-//                        channel = pool.borrowObject();
-//                        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-//                        channel.basicPublish("", QUEUE_NAME, null, reviewItem.toString().getBytes());
-//                    } catch (Exception e) {
-//                        throw new RuntimeException("Unable to borrow from pool" + e.toString());
-//                    } finally {
-//                        try {
-//                            if (channel != null) {
-//                                System.out.println("Channel return Done");
-//                                pool.returnObject(channel);
-//                            }
-//                        } catch (Exception e) {
-//                            System.out.println("Error when returning channel");
-//                        }
-//                    }
+                    Channel channel = null;
+                    try {
+                        channel = pool.borrowObject();
+                        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+                        channel.basicPublish("", QUEUE_NAME, null, reviewItem.toString().getBytes());
+                    } catch (Exception e) {
+                        throw new RuntimeException("Unable to borrow from pool" + e.toString());
+                    } finally {
+                        try {
+                            if (channel != null) {
+                                System.out.println("Channel return Done");
+                                pool.returnObject(channel);
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Error when returning channel");
+                        }
+                    }
                 } catch (Exception ex) {
                     rc = HttpServletResponse.SC_NOT_FOUND;
                 }

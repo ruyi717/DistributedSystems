@@ -1,9 +1,11 @@
 package albumstore;
 
 import albumstore.entity.ErrorMsg;
+import albumstore.entity.ImageMetaData;
 import albumstore.exception.BadRequestException;
 import albumstore.service.AlbumBodyService;
 import albumstore.exception.NotFoundException;
+import albumstore.service.ReviewService;
 import com.mongodb.*;
 import com.google.gson.Gson;
 import com.mongodb.client.MongoClient;
@@ -26,14 +28,15 @@ import java.util.stream.Collectors;
 public class MainServlet extends HttpServlet {
     private MongoClient mongoClient;
     private AlbumBodyService albumBodyService;
-    private static final String DB_ADDRESS = "35.160.170.87";
+    private ReviewService reviewService;
+    private static final String DB_ADDRESS = "35.90.245.196";
     private static final int DB_PORT = 27017;
 
 
     public MainServlet() {
         this.getConnection();
         this.albumBodyService = new AlbumBodyService(this.mongoClient);
-//        this.reviewService = new ReviewService(this.mongoClient);
+        this.reviewService = new ReviewService(this.mongoClient);
     }
 
 
@@ -44,7 +47,7 @@ public class MainServlet extends HttpServlet {
                 builder.hosts(
                     Collections.singletonList(new ServerAddress(connString.getHosts().get(0))))
             )
-            .credential(connString.getCredential())
+//            .credential(connString.getCredential())
             .build();
         mongoClient = MongoClients.create(settings);
     }
@@ -99,7 +102,7 @@ public class MainServlet extends HttpServlet {
                         .collect(Collectors.joining(""));
                 try {
                     jsonResponse = this.albumBodyService.createAlbum(image, profileJson);
-//                    this.reviewService.createReview(gson.fromJson(jsonResponse, ImageMetaData.class).getAlbumID());
+                    this.reviewService.createReview(gson.fromJson(jsonResponse, ImageMetaData.class).getAlbumID());
                 } catch (BadRequestException e) {
                     rc = HttpServletResponse.SC_BAD_REQUEST;
                     jsonResponse = gson.toJson(new ErrorMsg("invalid request about create Album"));

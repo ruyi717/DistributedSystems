@@ -2,7 +2,10 @@ package albumstore.entity;
 
 public class ReviewBody {
   private String id;
-  private ReviewProfile reviewProfile;
+
+  private Likes likes;
+
+  public ReviewBody() {}
 
   public String getId() {
     return id;
@@ -12,11 +15,11 @@ public class ReviewBody {
     this.id = id;
   }
 
-  public ReviewProfile getReviewProfile() {
-    return reviewProfile;
+  public Likes getReviewProfile() {
+    return likes;
   }
 
-  public void setReviewProfile(ReviewProfile reviewProfile) {
-    this.reviewProfile = reviewProfile;
+  public void setReviewProfile(Likes likes) {
+    this.likes = likes;
   }
 }

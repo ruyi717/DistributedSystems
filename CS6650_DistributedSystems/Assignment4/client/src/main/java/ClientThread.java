@@ -67,10 +67,12 @@ public class ClientThread implements Runnable {
                     );
                     failedNewAlbumRequest = false;
                     id = response.getData().getAlbumID();
+                    if (writer != null) writer.addValidIDs(id);
                     break;
                 } catch (ApiException e) {
                     failedNewAlbumRequest = true;
                     System.out.println("Exception when calling DefaultApi:newAlbum");
+                    System.out.println(e);
                 }
             }
             if (!id.equals("")) {
