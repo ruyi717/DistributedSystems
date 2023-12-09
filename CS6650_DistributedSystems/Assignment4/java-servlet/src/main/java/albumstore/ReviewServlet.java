@@ -26,7 +26,7 @@ import org.apache.commons.pool2.impl.GenericObjectPool;
 public class ReviewServlet extends HttpServlet {
     private MongoClient mongoClient;
     private ReviewService reviewService;
-    private static final String DB_ADDRESS = "35.90.245.196";
+    private static final String DB_ADDRESS = "54.188.34.71";
     private static final int DB_PORT = 27017;
     private final static String QUEUE_NAME = "album_review_queue";
     private ObjectPool<Channel> pool;

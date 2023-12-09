@@ -55,18 +55,27 @@ public class RequestRecordWriter {
         List<RequestRecord> gets = new ArrayList<>(), posts = new ArrayList<>();
         double getSum = 0;
         double postSum = 0;
+        int getRequestSize = 0;
+        int postRequestSize = 0;
+
         for (RequestRecord r : records) {
             if (r.getRequestType() == RequestRecord.RequestType.GET) {
                 getSum += r.getLatency();
                 gets.add(r);
+                getRequestSize++;
             } else {
                 postSum += r.getLatency();
                 posts.add(r);
+                postRequestSize++;
             }
 //            writeRequestRecordToCSV(r);
         }
-        double getMean = getSum / records.size();
-        double postMean = postSum / records.size();
+
+
+//        double getMean = getSum / records.size();
+//        double postMean = postSum / records.size();
+        double getMean = getSum / getRequestSize;
+        double postMean = postSum / postRequestSize;
         Collections.sort(gets);
         Collections.sort(posts);
         double getMin = gets.get(0).getLatency(), getMax = gets.get(gets.size() - 1).getLatency();

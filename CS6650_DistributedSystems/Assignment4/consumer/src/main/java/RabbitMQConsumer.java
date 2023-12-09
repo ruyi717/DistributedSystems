@@ -17,9 +17,9 @@ import java.util.logging.Logger;
 public class RabbitMQConsumer {
     private static final String QUEUE_NAME = "album_review_queue";
     // Todo: change to RabbitMQ server ip address
-    private static final String RABBITMQ_HOST = "35.86.166.211"; // RabbitMQ server host
+    private static final String RABBITMQ_HOST = "34.221.119.235"; // RabbitMQ server host
     // TODO: change to MongoDB server ip address
-    private static final String DB_ADDRESS = "35.90.245.196";
+    private static final String DB_ADDRESS = "54.188.34.71";
     private static final int DB_PORT = 27017;
     private static final int NUM_THREADS = 32;
 

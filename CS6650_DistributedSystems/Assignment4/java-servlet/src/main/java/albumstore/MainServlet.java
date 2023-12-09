@@ -29,7 +29,7 @@ public class MainServlet extends HttpServlet {
     private MongoClient mongoClient;
     private AlbumBodyService albumBodyService;
     private ReviewService reviewService;
-    private static final String DB_ADDRESS = "35.90.245.196";
+    private static final String DB_ADDRESS = "54.188.34.71";
     private static final int DB_PORT = 27017;
 
 

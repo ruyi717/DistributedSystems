@@ -1,11 +1,7 @@
-
-
 import io.swagger.client.*;
 import io.swagger.client.model.AlbumsProfile;
-
 import java.io.File;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class ClientDemo {
@@ -14,7 +10,6 @@ public class ClientDemo {
     private static final int INITIAL_GET_API_COUNT = 100;
     private static final int TEST_NUM_API_REQUEST = 100;
     private static final int TEST_NUM_GET_REVIEW_REQUEST = 1000;
-    // TODO: change to an existing album ID
     private static final String TEST_GET_ALBUM_ID = "6571fd5817a96c468bd8ad3a";
     private static final File TEST_POST_IMAGE_FILE = new File("src/nmtb.png");
     private static final AlbumsProfile TEST_POST_PROFILE = new AlbumsProfile();
@@ -64,11 +59,14 @@ public class ClientDemo {
         new Thread(getReviewThread2).start();
         new Thread(getReviewThread3).start();
         // Continue the following thread groups
+        // TODO: 3个threads做get request?
+        // TODO: 30 * 10 个threads用于post request?
         countDownLatch = new CountDownLatch(threadGroupSize * (numThreadGroups - 1));
         for (int i = 0; i < numThreadGroups - 1; i++) {
             addThreadGroup(threadGroupSize, TEST_NUM_API_REQUEST, ipAddress, counter, countDownLatch, writer);
             TimeUnit.SECONDS.sleep(delay);
         }
+        //TODO: 这个forloop为什么要放在这里？为什么不放在getreviewthread前边？
         // Wait until all thread groups completed
         countDownLatch.await();
         // Stop get review threads
