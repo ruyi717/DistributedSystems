@@ -18,23 +18,114 @@
       <change beforePath="$PROJECT_DIR$/../../Assignment1/java-client-generated (2)/src/main/java/io/swagger/client/api/ServerLoadTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment1/java-client-generated (2)/src/main/java/io/swagger/client/api/ServerLoadTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Assignment2/Assignment1_MavenProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment2/Assignment1_MavenProject/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/ClientDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/ClientDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/RequestRecordWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/RequestRecordWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/RabbitMQConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/RabbitMQConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/RabbitMQConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/RabbitMQConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/target/consumer-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/consumer-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/target/consumer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/consumer.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/ClientDemo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/ClientDemo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/ClientThread.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/ClientThread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/GetReviewThread.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/GetReviewThread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/RequestCounter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/RequestCounter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/RequestRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/RequestRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/RequestRecordWriter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/RequestRecordWriter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/allclasses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/class-use/ClientDemo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/class-use/ClientDemo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/class-use/ClientThread.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/class-use/ClientThread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/class-use/GetReviewThread.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/class-use/GetReviewThread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/class-use/RequestCounter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/class-use/RequestCounter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/class-use/RequestRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/class-use/RequestRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/class-use/RequestRecordWriter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/class-use/RequestRecordWriter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiCallback.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiCallback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiClient.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiClient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ApiResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/Configuration.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/Configuration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.DateTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.DateTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.LocalDateTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.LocalDateTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.OffsetDateTimeTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.OffsetDateTimeTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.SqlDateTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.SqlDateTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/JSON.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/Pair.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/Pair.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressRequestBody.ProgressRequestListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressRequestBody.ProgressRequestListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressRequestBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressRequestBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressResponseBody.ProgressListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressResponseBody.ProgressListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressResponseBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/ProgressResponseBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/StringUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/StringUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/DefaultApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/DefaultApi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/LikeApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/LikeApi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/class-use/DefaultApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/class-use/DefaultApi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/class-use/LikeApi.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/class-use/LikeApi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/api/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/ApiKeyAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/ApiKeyAuth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/Authentication.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/Authentication.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/HttpBasicAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/HttpBasicAuth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/OAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/OAuth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/OAuthFlow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/OAuthFlow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/ApiKeyAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/ApiKeyAuth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/Authentication.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/Authentication.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/HttpBasicAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/HttpBasicAuth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/OAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/OAuth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/OAuthFlow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/class-use/OAuthFlow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/auth/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiCallback.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiCallback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiClient.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiClient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ApiResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/Configuration.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/Configuration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.DateTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.DateTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.LocalDateTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.LocalDateTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.OffsetDateTimeTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.OffsetDateTimeTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.SqlDateTypeAdapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.SqlDateTypeAdapter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/JSON.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/Pair.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/Pair.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressRequestBody.ProgressRequestListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressRequestBody.ProgressRequestListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressRequestBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressRequestBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressResponseBody.ProgressListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressResponseBody.ProgressListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressResponseBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/ProgressResponseBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/StringUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/class-use/StringUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/AlbumInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/AlbumInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/AlbumsBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/AlbumsBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/AlbumsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/AlbumsProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/ErrorMsg.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/ErrorMsg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/ImageMetaData.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/ImageMetaData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/Likes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/Likes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/AlbumInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/AlbumInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/AlbumsBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/AlbumsBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/AlbumsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/AlbumsProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/ErrorMsg.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/ErrorMsg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/ImageMetaData.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/ImageMetaData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/Likes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/class-use/Likes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/model/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/io/swagger/client/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/member-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/package-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/apidocs/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/apidocs/type-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/ClientDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/ClientDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/maven-javadoc-plugin-stale-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-javadoc-plugin-stale-data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/surefire-reports/TEST-io.swagger.client.api.DefaultApiTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/surefire-reports/TEST-io.swagger.client.api.DefaultApiTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/swagger-java-client-1.0.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/albumstore/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/albumstore/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/albumstore/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/albumstore/MainServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/albumstore/ReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/albumstore/ReviewServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/albumstore/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/albumstore/ConnectionPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/albumstore/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/albumstore/MainServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/albumstore/ReviewServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/albumstore/ReviewServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-servlet.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-servlet.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-servlet/WEB-INF/classes/albumstore/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-servlet/WEB-INF/classes/albumstore/ConnectionPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-servlet/WEB-INF/classes/albumstore/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-servlet/WEB-INF/classes/albumstore/MainServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-servlet/WEB-INF/classes/albumstore/ReviewServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-servlet/WEB-INF/classes/albumstore/ReviewServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,33 +142,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2ZFIJ6XuyEyNLXB7xlDc3ECJROV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/Users/jouy/Desktop/DistributedSystems/CS6650_DistributedSystems/Assignment4/java-servlet",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jouy/Desktop/DistributedSystems/CS6650_DistributedSystems/Assignment4/java-servlet&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -86,7 +177,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702011329152</updated>
-      <workItem from="1702011331830" duration="4435000" />
+      <workItem from="1702011331830" duration="4926000" />
+      <workItem from="1702408566277" duration="92000" />
     </task>
     <servers />
   </component>

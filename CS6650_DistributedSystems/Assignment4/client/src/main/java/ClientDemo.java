@@ -18,38 +18,41 @@ public class ClientDemo {
 
     public static void main(String[] args) throws InterruptedException, ApiException {
         int threadGroupSize, numThreadGroups, delay;
-        String ipAddress;
+        String postIpAddress;
+        String getIpAddress;
         TEST_POST_PROFILE.setArtist("Taylor Swift");
         TEST_POST_PROFILE.setYear("2019");
         TEST_POST_PROFILE.setTitle("Lover");
-        if (args.length != 4) {
+        if (args.length != 5) {
 //            System.out.println("Usage: ClientDemo <threadGroupSize> <numThreadGroups> <delay> <ipAddress>");
 //            return;
             threadGroupSize = Integer.parseInt("10");
             numThreadGroups = Integer.parseInt("10");
             delay = Integer.parseInt("2");
-            ipAddress ="http://localhost:8080";
+            postIpAddress ="http://localhost:8080";
+            getIpAddress = "http://localhost:8080";
         } else {
             threadGroupSize = Integer.parseInt(args[0]);
             numThreadGroups = Integer.parseInt(args[1]);
             delay = Integer.parseInt(args[2]);
-            ipAddress = args[3];
+            postIpAddress = args[3];
+            getIpAddress = args[4];
         }
 
         // Initialization phase
         CountDownLatch countDownLatchInitialization = new CountDownLatch(INITIAL_THREAD_POOL_SIZE);
-        addThreadGroup(INITIAL_THREAD_POOL_SIZE, INITIAL_GET_API_COUNT, ipAddress, countDownLatchInitialization);
+        addThreadGroup(INITIAL_THREAD_POOL_SIZE, INITIAL_GET_API_COUNT, postIpAddress, countDownLatchInitialization);
         countDownLatchInitialization.await();
 
         // Working phase
         long start = System.currentTimeMillis();
         CountDownLatch getReviewsCountDownLatch = new CountDownLatch(3);
-        GetReviewThread getReviewThread1 = new GetReviewThread(TEST_NUM_GET_REVIEW_REQUEST, ipAddress, counter, getReviewsCountDownLatch, writer);
-        GetReviewThread getReviewThread2 = new GetReviewThread(TEST_NUM_GET_REVIEW_REQUEST, ipAddress, counter, getReviewsCountDownLatch, writer);
-        GetReviewThread getReviewThread3 = new GetReviewThread(TEST_NUM_GET_REVIEW_REQUEST, ipAddress, counter, getReviewsCountDownLatch, writer);
+        GetReviewThread getReviewThread1 = new GetReviewThread(TEST_NUM_GET_REVIEW_REQUEST, getIpAddress, counter, getReviewsCountDownLatch, writer);
+        GetReviewThread getReviewThread2 = new GetReviewThread(TEST_NUM_GET_REVIEW_REQUEST, getIpAddress, counter, getReviewsCountDownLatch, writer);
+        GetReviewThread getReviewThread3 = new GetReviewThread(TEST_NUM_GET_REVIEW_REQUEST, getIpAddress, counter, getReviewsCountDownLatch, writer);
         // Start first thread group
         CountDownLatch countDownLatch = new CountDownLatch(threadGroupSize);
-        addThreadGroup(threadGroupSize, TEST_NUM_API_REQUEST, ipAddress, counter, countDownLatch, writer);
+        addThreadGroup(threadGroupSize, TEST_NUM_API_REQUEST, postIpAddress, counter, countDownLatch, writer);
         TimeUnit.SECONDS.sleep(delay);
         // Wait until first thread group completed
         countDownLatch.await();
@@ -59,15 +62,12 @@ public class ClientDemo {
         new Thread(getReviewThread2).start();
         new Thread(getReviewThread3).start();
         // Continue the following thread groups
-        // TODO: 3个threads做get request?
-        // TODO: 30 * 10 个threads用于post request?
         countDownLatch = new CountDownLatch(threadGroupSize * (numThreadGroups - 1));
         for (int i = 0; i < numThreadGroups - 1; i++) {
-            addThreadGroup(threadGroupSize, TEST_NUM_API_REQUEST, ipAddress, counter, countDownLatch, writer);
+            addThreadGroup(threadGroupSize, TEST_NUM_API_REQUEST, postIpAddress, counter, countDownLatch, writer);
             TimeUnit.SECONDS.sleep(delay);
         }
-        //TODO: 这个forloop为什么要放在这里？为什么不放在getreviewthread前边？
-        // Wait until all thread groups completed
+
         countDownLatch.await();
         // Stop get review threads
         getReviewThread1.terminate();
